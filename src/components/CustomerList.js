@@ -2,14 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const CustomerList = ({customers}) => {
-    const renderCustomers = Object.keys(customers).map(custID) => 
-    <React.Fragment>
-        <Link key={custId} to={`/customers/${custId}`}>{customers[custId].name}</Link>
-    </React.Fragment>
+    const renderCustomers = Object.keys(customers).map(custID => 
+        <li>
+            <Link key={custID} to={`/customers/${custID}`}>{customers[custID].name}</Link>
+            
+        </li>
+    )
 
     return ( 
-        <div>
+        <React.Fragment>
+        <h3>Choose a customer from the list below</h3>
+        <ul>
             {renderCustomers}
-        </div>
+        </ul>
+        </React.Fragment>
+
     )
 }
+
+export default CustomerList

@@ -27,6 +27,7 @@ class App extends Component {
         <Navbar />
         <Route exact path='/' component={Home} />
         <Route path='/customers' render={routerProps => <CustomerPage {...routerProps} customers={this.state.customers}/>} />
+
         {/* <Route path='/bike' component={Home} /> */}
         <Route exact path='/about' component={About} />
       </Router>
