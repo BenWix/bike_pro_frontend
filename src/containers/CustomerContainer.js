@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-const CustomerContainer = ({match, customers}) => {
-    return (
-        <div>
-            <h3>{customers[match.params.custId].name}'s Page</h3>
-        </div>
-    )
+class CustomerContainer extends Component {
+    render() {
+        return (
+            <div>Here is the customer's page</div>
+        )
+    }
 }
 
 export default CustomerContainer

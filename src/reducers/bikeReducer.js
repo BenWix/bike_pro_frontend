@@ -1,5 +1,5 @@
 export default function(state = [], action) {
-    let idx
+    // let idx
     switch (action.type) {
         case 'ADD_BIKE':
            return [...state, action.bike]

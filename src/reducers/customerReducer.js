@@ -1,5 +1,5 @@
 export default function(state = {customers: [], loading: false}, action) {
-    let idx
+    // let idx
     switch (action.type) {
         case 'LOADING_CUSTOMERS':
             return {...state, customers: [...state.customers], loading: true}
@@ -10,6 +10,6 @@ export default function(state = {customers: [], loading: false}, action) {
         case 'ADD_CUSTOMER':
            return {...state, customers: [...state.customers, action.customer], loading: false}
         default: 
-        return state
+            return state
     }
 }

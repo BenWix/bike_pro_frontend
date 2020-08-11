@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const CustomerList = ({customers}) => {
     const renderCustomers = Object.keys(customers).map(custID => 
-        <li>
+        <li key={custID}>
             <Link key={custID} to={`/customers/${custID}`}>{customers[custID].name}</Link>
         </li>
     )
