@@ -6,3 +6,10 @@ export const fetchCustomers = () => {
         .then(customers => dispatch({type: 'ADD_CUSTOMERS', customers}))
     }
 }
+
+export const addCustomer = (customer) => {
+    return {
+        type: 'ADD_CUSTOMER',
+        customer
+    }
+}
