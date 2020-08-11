@@ -4,11 +4,14 @@ import {connect} from 'react-redux'
 import {addCustomer} from '../actions/customerActions'
 
 class CustomerForm extends Component {
+    constructor(props) {
+        super(props)
 
-    state={
-        name: '',
-        email: '',
-        phone: ''
+        this.state={
+            name: '',
+            email: '',
+            phone: ''
+        }
     }
 
     handleChange = event => {
@@ -33,15 +36,15 @@ class CustomerForm extends Component {
                 <h3>Add A new Customer</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name:</label>
-                    <input type='text' name='name' onChange={this.handelChage}/>
+                    <input type='text' name='name' onChange={this.handleChange} value={this.state.name}/>
                     <br/>
                     
                     <label>Email:</label>
-                    <input type='text' name='email' onChange={this.handelChage}/>
+                    <input type='text' name='email' value={this.state.email} onChange={this.handleChange}/>
                     <br/>
                     
                     <label>Phone Number:</label>
-                    <input type='text' name='phone' onChange={this.handelChage}/>
+                    <input type='text' name='phone' onChange={this.handleChange} value={this.state.phone}/>
                     <br/>
                     
                     <input type='submit' />
