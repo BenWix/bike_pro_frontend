@@ -5,7 +5,6 @@ const CustomerList = ({customers}) => {
     const renderCustomers = Object.keys(customers).map(custID => 
         <li>
             <Link key={custID} to={`/customers/${custID}`}>{customers[custID].name}</Link>
-            
         </li>
     )
 

@@ -3,10 +3,12 @@ export default function(state = {customers: [], loading: false}, action) {
     switch (action.type) {
         case 'LOADING_CUSTOMERS':
             return {...state, customers: [...state.customers], loading: true}
+
         case 'ADD_CUSTOMERS':
-            
+            return {...state, customers: [...action.customers], loading: false}
+
         case 'ADD_CUSTOMER':
-           return {...state, customers: [...state, action.customer], loading: false}
+           return {...state, customers: [...state.customers, action.customer], loading: false}
         default: 
         return state
     }
