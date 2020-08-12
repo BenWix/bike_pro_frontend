@@ -13,13 +13,20 @@ export default function(state = {customers: [], loading: false}, action) {
     // let idx
     switch (action.type) {
         case 'LOADING_CUSTOMERS':
-            return {...state, customers: [...state.customers], loading: true}
+            return {customers: [...state.customers], loading: true}
 
-        case 'ADD_CUSTOMERS':
-            return {...state, customers: [...action.customers], loading: false}
+        case 'CUSTOMERS_LOADED':
+            return {customers: [...action.customers], loading: false}
+
+        case 'LOADING_CUSTOMER':
+            return {customer: {}, loading: true}
+
+        case 'CUSTOMER_LOADED':
+            return {customer: {...action.customer}, loading: false}
 
         case 'ADD_CUSTOMER':
            return {...state, customers: [...state.customers, action.customer], loading: false}
+        
         default: 
             return state
     }

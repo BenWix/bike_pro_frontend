@@ -3,7 +3,16 @@ export const fetchCustomers = () => {
         dispatch({ type: 'LOADING_CUSTOMERS'})
         fetch('http://localhost:3001/users')
         .then(resp => resp.json())
-        .then(customers => dispatch({type: 'ADD_CUSTOMERS', customers}))
+        .then(customers => dispatch({type: 'CUSTOMERS_LOADED', customers}))
+    }
+}
+
+export const fetchCustomer = (id) => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_CUSTOMER'})
+        fetch(`http://localhost:3001/users/${id}`)
+        .then(resp => resp.json())
+        .then(customer => dispatch({type: 'CUSTOMER_LOADED', customer}))
     }
 }
 
