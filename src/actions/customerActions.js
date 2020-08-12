@@ -9,6 +9,7 @@ export const fetchCustomers = () => {
 
 export const fetchCustomer = (id) => {
     return (dispatch) => {
+        console.log('loading customer')
         dispatch({type: 'LOADING_CUSTOMER'})
         fetch(`http://localhost:3001/users/${id}`)
         .then(resp => resp.json())

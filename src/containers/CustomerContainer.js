@@ -1,28 +1,37 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
+import {fetchCustomers} from '../actions/customerActions'
 import {fetchCustomer} from '../actions/customerActions'
 
 class CustomerContainer extends Component {
     
+    
     componentDidMount() {
+        // this.props.fetchCustomers()
         this.props.fetchCustomer(this.props.match.params.id)
     }
     
     render() {
-        // this.props.match.params.id
-        console.log('Why is this not rendering?')
-        return (
-            <div>Here is the customer's page</div>
-        )
+        const customer = this.props.customers.find(obj => obj.id === parseInt(this.props.match.params.id))
+        if (this.props.loading || !customer) {
+            return(<div>Loading</div>)
+        } else {
+            return (
+                <div>Here is the customer's page
+                    <h3>customer:{customer.name}</h3>
+                </div>
+            )
+
+        }
     }
 }
 
 const mapStateToProps = state => {
     return {
-        customer: state.customer,
+        customers: state.customers,
         loading: state.loading
     }
 }
 
-export default connect(mapStateToProps, {fetchCustomer})(CustomerContainer)
+export default connect(mapStateToProps , {fetchCustomers, fetchCustomer})(CustomerContainer)
