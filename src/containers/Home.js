@@ -11,6 +11,8 @@ class Home extends Component {
     }
     
     render() {
+        console.log(this.props.customers)
+
         return (
             <div>
                 <CustomerList customers={this.props.customers} />
@@ -23,7 +25,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        customers: state.customers.customers
+        customers: state.customers,
     }
 }
 

@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const CustomerList = ({customers}) => {
-    const renderCustomers = Object.keys(customers).map(custID => 
-        <li key={custID}>
-            <Link key={custID} to={`/customers/${custID}`}>{customers[custID].name}</Link>
+    const renderCustomers = customers.map(cust => 
+        <li key={cust.id}>
+            <Link key={cust.id} to={`/customers/${cust.id}`}>{cust.name} - {cust.email}</Link>
         </li>
     )
 
