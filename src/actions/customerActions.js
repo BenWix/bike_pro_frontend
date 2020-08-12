@@ -1,15 +1,29 @@
 export const fetchCustomers = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_CUSTOMERS'})
-        fetch('http://localhost:3001/user')
+        fetch('http://localhost:3001/users')
         .then(resp => resp.json())
         .then(customers => dispatch({type: 'ADD_CUSTOMERS', customers}))
     }
 }
 
 export const addCustomer = (customer) => {
-    return {
-        type: 'ADD_CUSTOMER',
-        customer
+    return (dispatch) => {
+        dispatch({ type: 'ADD_CUSTOMER_STARTED'})
+           
+        let configObj = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(customer)
+        };
+
+        console.log(configObj.body)
+
+        fetch('http://localhost:3001/users', configObj)
+        .then(resp => resp.json())
+        .then(customer => dispatch({type: 'ADD_CUSTOMER', customer}))
     }
 }
