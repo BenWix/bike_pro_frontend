@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
 
-import {connect} from 'react-redux'
-import {addCustomer} from '../actions/customerActions'
-
 class CustomerForm extends Component {
     constructor(props) {
         super(props)
@@ -55,4 +52,4 @@ class CustomerForm extends Component {
 
 }
 
-export default connect(null, {addCustomer})(CustomerForm)
+export default CustomerForm
