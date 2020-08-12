@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
+import BikeContainer from './BikeContainer'
+
 import {fetchCustomer} from '../actions/customerActions'
 
 class CustomerContainer extends Component {
@@ -19,6 +21,7 @@ class CustomerContainer extends Component {
             return (
                 <div>Here is the customer's page
                     <h3>customer:{customer.name}</h3>
+                    <BikeContainer bikes={customer.bikes} customer={customer} />
                 </div>
             )
 
