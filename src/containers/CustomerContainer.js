@@ -1,27 +1,31 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
-import BikeContainer from './BikeContainer'
+import BikeList from '../components/BikeList'
+import BikeForm from '../components/BikeForm'
 
-import {fetchCustomer} from '../actions/customerActions'
+import {fetchCustomerInfo} from '../actions/customerActions'
 
 class CustomerContainer extends Component {
     
     
-    componentDidMount() {
-        // this.props.fetchCustomers()
-        this.props.fetchCustomer(this.props.match.params.id)
-    }
-    
     render() {
         const customer = this.props.customers.find(obj => obj.id === parseInt(this.props.match.params.id))
-        if (this.props.loading || !customer) {
+        
+        if (customer.bikes === undefined) {
+            this.props.fetchCustomerInfo(this.props.match.params.id)
+        }
+
+        if (this.props.loading || !customer || customer.bikes === undefined) {
             return(<div>Loading</div>)
         } else {
+            // debugger
             return (
-                <div>Here is the customer's page
+                <div>
+                    Here is the customer's page
                     <h3>customer:{customer.name}</h3>
-                    <BikeContainer bikes={customer.bikes} customer={customer} />
+                    <BikeList bikes={customer.bikes} customer_name={customer.name}/>
+                    <BikeForm />
                 </div>
             )
 
@@ -36,4 +40,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps , {fetchCustomer})(CustomerContainer)
+export default connect(mapStateToProps , {fetchCustomerInfo})(CustomerContainer)

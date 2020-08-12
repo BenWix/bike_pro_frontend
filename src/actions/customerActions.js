@@ -7,7 +7,7 @@ export const fetchCustomers = () => {
     }
 }
 
-export const fetchCustomer = (id) => {
+export const fetchCustomerInfo = (id) => {
     return (dispatch) => {
         console.log('loading customer')
         dispatch({type: 'LOADING_CUSTOMER'})
