@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
-import {fetchCustomers} from '../actions/customerActions'
 import {fetchCustomer} from '../actions/customerActions'
 
 class CustomerContainer extends Component {
@@ -34,4 +33,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps , {fetchCustomers, fetchCustomer})(CustomerContainer)
+export default connect(mapStateToProps , {fetchCustomer})(CustomerContainer)
