@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
-import {fetchBike} from '../actions/customerActions'
+import {fetchBike, addRepair} from '../actions/customerActions'
 import RepairList from '../components/RepairList'
+import RepairForm from '../components/RepairForm'
 
 class BikeContainer extends Component {
     
@@ -23,7 +24,7 @@ class BikeContainer extends Component {
                 Lets Look at this bike!!
                 {this.props.bike.name}
                 <RepairList repairs={this.props.bike.repairs}/>
-
+                <RepairForm addRepair={this.props.addRepair} bike_id={this.props.bike.id}/>
             </div>
         )
     
@@ -37,4 +38,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchBike})(BikeContainer) 
+export default connect(mapStateToProps, {fetchBike, addRepair})(BikeContainer) 
