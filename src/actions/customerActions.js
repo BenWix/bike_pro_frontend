@@ -9,16 +9,6 @@ export const fetchCustomers = () => {
     }
 }
 
-// export const fetchCustomerInfo = (id) => {
-//     return (dispatch) => {
-//         console.log('loading customer')
-//         dispatch({type: 'LOADING_CUSTOMER'})
-//         fetch(`${url}/users/${id}`)
-//         .then(resp => resp.json())
-//         .then(customer => dispatch({type: 'CUSTOMER_LOADED', customer}))
-//     }
-// }
-
 export const addCustomer = (customer) => {
     return (dispatch) => {
         dispatch({ type: 'ADD_CUSTOMER_STARTED'})
@@ -62,10 +52,28 @@ export const addBike = bike => {
         body: JSON.stringify(bike)
         };
 
-        console.log(configObj.body)
-
         fetch(`${url}/bikes`, configObj)
         .then(resp => resp.json())
         .then(bike => dispatch({type: 'ADD_BIKE', bike}))
+    }
+}
+
+export const addRepair = repair => {
+    return (dispatch) => {
+        dispatch({ type: 'ADD_REPAIR_STARTED'})
+
+        let configObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(repair)
+            };
+
+            console.log('sending to database')
+            fetch(`${url}/repairs`, configObj)
+            .then(resp => resp.json())
+            .then(repair => dispatch({type: 'ADD_REPAIR', repair}))
     }
 }
