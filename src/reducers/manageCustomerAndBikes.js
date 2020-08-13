@@ -34,8 +34,10 @@ export default function(state = {customers: [], loading: false}, action) {
             return {...state, customers: [...state.customers], loading: true}
 
         case 'ADD_BIKE': 
-            debugger
-            return {...state, loading: true}
+            // console.log('Made it to the reducer')
+            idx = state.customers.findIndex(customer => customer.id === action.bike.user_id)
+            // debugger
+            return {...state,customers: [...state.customers.slice(0,idx),{...state.customers[idx], bikes: state.customers[idx].bikes.concat(action.bike)}, ...state.customers.slice(idx+1)], loading: false}
             
 
         default: 
