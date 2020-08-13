@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {fetchBike, addRepair} from '../actions/customerActions'
 import RepairList from '../components/RepairList'
 import RepairForm from '../components/RepairForm'
+import BikeInfo from '../components/BikeInfo'
 
 class BikeContainer extends Component {
     
@@ -21,8 +22,7 @@ class BikeContainer extends Component {
 
         return (
             <div>
-                Lets Look at this bike!!
-                {this.props.bike.name}
+                <BikeInfo bike={this.props.bike} />
                 <RepairList repairs={this.props.bike.repairs}/>
                 <RepairForm addRepair={this.props.addRepair} bike_id={this.props.bike.id}/>
             </div>
