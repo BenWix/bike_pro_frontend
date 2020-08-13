@@ -66,6 +66,25 @@ export const addBike = bike => {
     }
 }
 
+export const updateMiles = bike => {
+    return (dispatch) => {
+        dispatch({type: 'UPDATE_MILES_STARTED'})
+
+        let configObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(bike)
+            };
+
+            fetch(`${url}/bikes/${bike.bike_id}`, configObj)
+            .then(resp => resp.json())
+            .then(bike => dispatch({type: 'UPDATE_MILES', bike}))
+    }
+}
+
 export const deleteBike = id => {
     return (dispatch) => {
         dispatch({ type: 'DELETE_BIKE_STARTED'})

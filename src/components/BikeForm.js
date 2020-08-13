@@ -21,7 +21,6 @@ class BikeForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        console.log('We Will record this data one day')
         let bike = {...this.state, user_id: this.props.customer_id}
         this.props.addBike(bike)
         this.setState({

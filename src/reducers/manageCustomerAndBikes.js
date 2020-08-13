@@ -40,6 +40,12 @@ export default function(state = {customers: [], bike: {}, loading: false}, actio
                          ...state.customers.slice(idx+1)], 
                 loading: false}
         
+        case 'UPDATE_MILES_STARTED':
+            return {...state, loading: true}
+
+        case 'UPDATE_MILES':
+            return {...state, bike: action.bike, loading: false}
+
         case 'DELETE_BIKE_STARTED':
             return {...state, loading: true}
 

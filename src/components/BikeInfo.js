@@ -14,7 +14,7 @@ class BikeInfo extends Component  {
     handleSubmit = event => {
         event.preventDefault()
         let milesUpdate = {bike_id: this.props.bike.id, miles: this.state.miles}
-        // this.props.updateMiles(milesUpdate)
+        this.props.updateMiles(milesUpdate)
         this.setState({
             miles: ''
         })
