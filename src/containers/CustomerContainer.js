@@ -9,20 +9,18 @@ import {fetchCustomers, addBike} from '../actions/customerActions'
 
 class CustomerContainer extends Component {
     
-    // componentDidMount() {
-    //     if (this.props.customers === []) {
-    //         this.props.fetchCustomers()
-    //     }
-    // }
+    componentDidMount() {
+            this.props.fetchCustomers()
+    }
 
     render() {
         const customer = this.props.customers.find(obj => obj.id === parseInt(this.props.match.params.id))
         // debugger
 
-        if (this.props.loading || customer === undefined) {
-            // this.props.fetchCustomers()
-            return(<div>Loading</div>)
-        } else {
+        // if (this.props.loading || customer === undefined) {
+        //     // this.props.fetchCustomers()
+        //     return(<div>Loading</div>)
+        // } else {
             // debugger
             return (
                 <div>
@@ -33,7 +31,7 @@ class CustomerContainer extends Component {
                 </div>
             )
 
-        }
+        // }
     }
 }
 
