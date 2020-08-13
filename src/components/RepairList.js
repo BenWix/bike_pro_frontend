@@ -7,7 +7,7 @@ const RepairList = ({repairs}) => {
         
         return (
             <React.Fragment>
-                <h3>Here are all of the repairs</h3>  
+                <h3>Repair Log: </h3>  
                 <ul>
                     {repairs.map(repair => <li key={repair.id}>{repair.repair_type}</li>)}    
                 </ul>  

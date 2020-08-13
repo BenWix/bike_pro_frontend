@@ -11,7 +11,7 @@ const BikeList = ({bikes, customer_name, deleteBike}) => {
 
     return (
         <React.Fragment>
-            <h3>Here are all of {customer_name}'s bikes.</h3>  
+            <h3>{customer_name}'s bikes.</h3>  
             <ul>
                 {renderBikes}    
             </ul>  
