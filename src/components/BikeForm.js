@@ -41,8 +41,15 @@ class BikeForm extends Component {
                     <input type='text' name='name' value={this.state.name} onChange={this.handleChange}/>
                     <br/>
 
-                    <label>Type:</label>
-                    <input type='text' name='bike_type' value={this.state.bike_type} onChange={this.handleChange}/>
+                    <label>Bike Type:</label>
+                    {/* <input type='text' name='bike_type' value={this.state.bike_type} onChange={this.handleChange}/> */}
+                    <select name='bike_type' value={this.state.bike_type} onChange={this.handlChange}>
+                        <option value='Full Suspension'>Full Suspension</option>
+                        <option value='Hardtail'>Hardtail</option>
+                        <option value='Road Bike'>Road Bike</option>
+                        <option value='Hybrid'>Hybrid</option>
+                        <option value='E-bike'>E-bike</option>
+                    </select>
                     <br/>
 
                     <label>Miles:</label>
