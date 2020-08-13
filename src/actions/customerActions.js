@@ -58,6 +58,16 @@ export const addBike = bike => {
     }
 }
 
+export const deleteBike = id => {
+    return (dispatch) => {
+        dispatch({ type: 'DELETE_BIKE_STARTED'})
+
+        fetch(`${url}/bikes/${id}`, {method: 'DELETE'})
+        .then(resp => resp.json())
+        .then(bike => dispatch({type: 'DELTE_BIKE', bike}))
+    }
+}
+
 export const addRepair = repair => {
     return (dispatch) => {
         dispatch({ type: 'ADD_REPAIR_STARTED'})
