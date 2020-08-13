@@ -9,8 +9,7 @@ export default class About extends Component {
                 It was designed so that bikes could be entered and then users 
                 would be alerted when a bike needs a specific type of maintenance.
                 The maintenance required is based off of the date and miles ridden. 
-                The distance of the bike can be manually updated, or it can be linked 
-                to a Strava account, to keep an accurate and automatically updated record
+                The distance of the bike can be manually updated to keep an accurate and automatically updated record
                 of the mileage on the bike.</p>
                 
                 <p>As the app progresses, we hope to have the maintenance be more specific, 

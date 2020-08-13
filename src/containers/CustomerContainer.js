@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 
 import BikeList from '../components/BikeList'
 import BikeForm from '../components/BikeForm'
+import CustomerInfo from '../components/CustomerInfo'
+
 
 import {fetchCustomers, addBike, deleteBike} from '../actions/customerActions'
 
@@ -18,7 +20,7 @@ class CustomerContainer extends Component {
     
         return (
             <div>
-                <h3>Customer:{customer.name}</h3>
+                <CustomerInfo customer={customer}/>
                 <BikeList bikes={customer.bikes} deleteBike={this.props.deleteBike }customer_name={customer.name}/>
                 <BikeForm addBike={this.props.addBike} customer_id={customer.id}/>
             </div>
