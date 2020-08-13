@@ -22,6 +22,16 @@ export default function(state = {customers: [], bike: {}, loading: false}, actio
         case 'ADD_CUSTOMER':
            return {...state, customers: [...state.customers, action.customer], loading: false}
         
+        case 'DELETE_CUSTOMER_STARTED':
+            return {...state, loading: true}
+
+        case 'DELETE_CUSTOMER':
+            // debugger
+            idx = state.customers.findIndex(customer => customer.id === action.customer.id)
+            return {...state,customers: 
+                    [...state.customers.slice(0,idx), ...state.customers.slice(idx + 1)] 
+                ,loading: false}
+
         case 'LOADING_BIKE':
             return {...state, loading: true}
 

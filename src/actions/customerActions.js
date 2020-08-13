@@ -22,11 +22,19 @@ export const addCustomer = (customer) => {
         body: JSON.stringify(customer)
         };
 
-        console.log(configObj.body)
-
         fetch(`${url}/users`, configObj)
         .then(resp => resp.json())
         .then(customer => dispatch({type: 'ADD_CUSTOMER', customer}))
+    }
+}
+
+export const deleteCustomer = id => {
+    return (dispatch) => {
+        dispatch({ type: 'DELETE_CUSTOMER_STARTED'})
+
+        fetch(`${url}/users/${id}`, {method: 'DELETE'})
+        .then(resp => resp.json())
+        .then(customer => dispatch({type: 'DELETE_CUSTOMER', customer}))
     }
 }
 
