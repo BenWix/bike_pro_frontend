@@ -15,23 +15,15 @@ class CustomerContainer extends Component {
 
     render() {
         const customer = this.props.customers.find(obj => obj.id === parseInt(this.props.match.params.id))
-        // debugger
-
-        // if (this.props.loading || customer === undefined) {
-        //     // this.props.fetchCustomers()
-        //     return(<div>Loading</div>)
-        // } else {
-            // debugger
-            return (
-                <div>
-                    Here is the customer's page
-                    <h3>customer:{customer.name}</h3>
-                    <BikeList bikes={customer.bikes} customer_name={customer.name}/>
-                    <BikeForm addBike={this.props.addBike} customer_id={customer.id}/>
-                </div>
-            )
-
-        // }
+    
+        return (
+            <div>
+                Here is the customer's page
+                <h3>customer:{customer.name}</h3>
+                <BikeList bikes={customer.bikes} customer_name={customer.name}/>
+                <BikeForm addBike={this.props.addBike} customer_id={customer.id}/>
+            </div>
+        )
     }
 }
 
