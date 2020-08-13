@@ -21,7 +21,7 @@ export default function(state = {customers: [], loading: false}, action) {
 
         case 'LOADING_CUSTOMER':
             console.log('Loading customer details')
-            return {...state, loading: true}
+            return {...state, customers: [...state.customers], loading: true}
 
         case 'CUSTOMER_LOADED':
             idx = state.customers.findIndex(customer => customer.id === action.customer.id)
@@ -30,6 +30,14 @@ export default function(state = {customers: [], loading: false}, action) {
         case 'ADD_CUSTOMER':
            return {...state, customers: [...state.customers, action.customer], loading: false}
         
+        case 'ADD_BIKE_STARTED': 
+            return {...state, customers: [...state.customers], loading: true}
+
+        case 'ADD_BIKE': 
+            debugger
+            return {...state, loading: true}
+            
+
         default: 
             return state
     }

@@ -37,3 +37,24 @@ export const addCustomer = (customer) => {
         .then(customer => dispatch({type: 'ADD_CUSTOMER', customer}))
     }
 }
+
+export const addBike = bike => {
+    return (dispatch) => {
+        dispatch({ type: 'ADD_BIKE_STARTED'})
+           
+        let configObj = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(bike)
+        };
+
+        console.log(configObj.body)
+
+        fetch('http://localhost:3001/bikes', configObj)
+        .then(resp => resp.json())
+        .then(bike => dispatch({type: 'ADD_BIKE', bike}))
+    }
+}
