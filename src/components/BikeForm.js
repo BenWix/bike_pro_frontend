@@ -9,7 +9,8 @@ class BikeForm extends Component {
             bike_type: '',
             name: '',
             miles: '',
-            strava_id: ''
+            strava_id: '',
+            date_purchased: ''
         }
     }
 
@@ -28,7 +29,8 @@ class BikeForm extends Component {
             bike_type: '',
             name: '',
             miles: '',
-            strava_id: ''
+            strava_id: '',
+            date_purchased: ''
         })
     }
 
@@ -59,6 +61,11 @@ class BikeForm extends Component {
                     <label>Strava ID:</label>
                     <input type='text' name='strava_id' value={this.state.strava_id} onChange={this.handleChange}/>
                     <br/>
+
+                    <label>Date Purchased:</label>
+                    <input type='date' name='date_purchased' value={this.state.date_purchased} onChange={this.handleChange}/>
+                    <br/>
+
 
                     <input type='submit'/>
 

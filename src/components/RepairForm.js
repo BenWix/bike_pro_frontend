@@ -48,7 +48,7 @@ export default class RepairForm extends Component {
                     <br/>
 
                     <label>Date:</label>
-                    <input type='text' name='date' onChange={this.handleChange} value={this.state.date}/>
+                    <input type='date' name='date' onChange={this.handleChange} value={this.state.date}/>
                     <br/>
 
                     <input type='submit' />
