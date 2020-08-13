@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const BikeList = ({bikes, customer_name}) => {
     const renderBikes = bikes.map(bike => 
         <li key={bike.id}>
-            <Link key={bike.id} to={`bikes/${bike.id}`}>{bike.name}</Link>
+            <Link key={bike.id} to={`/bikes/${bike.id}`}>{bike.name}</Link>
         </li>
     )
 
