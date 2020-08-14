@@ -1,9 +1,11 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import logo from '../images/favicon.png'
 
 const NavBar = () => {
     return (
-      <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
+      <div className='navbar'>
+
         <NavLink 
           style={{ marginRight: '10px' }} 
           to="/"
@@ -22,6 +24,8 @@ const NavBar = () => {
         >
           About
         </NavLink>
+
+        <img src={logo} alt='logo'/>
       </div>
     );
   }

@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-    <div>
+    <React.Fragment>
       <Router>
         <Navbar />
         <h1>Bike Shop Pro</h1>
@@ -27,7 +27,7 @@ class App extends Component {
         <Route path='/bikes/:id' component={BikeContainer} />
         <Route path='/about' component={About} />
       </Router>
-    </div>
+    </React.Fragment>
     )
   }
 }
