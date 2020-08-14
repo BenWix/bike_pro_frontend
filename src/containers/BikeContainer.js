@@ -24,7 +24,7 @@ class BikeContainer extends Component {
             <div>
                 <BikeInfo bike={this.props.bike} updateMiles={this.props.updateMiles} />
                 <RepairList repairs={this.props.bike.repairs}/>
-                <RepairForm addRepair={this.props.addRepair} bike_id={this.props.bike.id}/>
+                <RepairForm addRepair={this.props.addRepair} miles={this.props.bike.miles} bike_id={this.props.bike.id}/>
             </div>
         )
     
