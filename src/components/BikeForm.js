@@ -1,12 +1,21 @@
 import React, {Component} from 'react'
 
+
+// const options = [
+//     {value: 'Full Suspension', label: 'Full Suspension'},
+//     {value: 'Hardtail', label: 'Hardtail'},
+//     {value: 'Road Bike', label: 'Road Bike'},
+//     {value: 'Hybrid Bike', label: 'Hybrid Bike'},
+//     {value: 'E-bike', label: 'E-bike'},
+// ]
+
 // import {connect} from 'react-redux'
 
 class BikeForm extends Component {
     constructor(props) {
         super(props)
         this.state={
-            bike_type: '',
+            bike_type: 'Full Suspension',
             name: '',
             miles: '',
             date_purchased: ''
@@ -24,7 +33,7 @@ class BikeForm extends Component {
         let bike = {...this.state, user_id: this.props.customer_id}
         this.props.addBike(bike)
         this.setState({
-            bike_type: '',
+            bike_type: 'Full Suspension',
             name: '',
             miles: '',
             date_purchased: ''
@@ -42,7 +51,7 @@ class BikeForm extends Component {
 
                     <label>Bike Type:</label>
                     {/* <input type='text' name='bike_type' value={this.state.bike_type} onChange={this.handleChange}/> */}
-                    <select name='bike_type' value={this.state.bike_type} onChange={this.handlChange}>
+                    <select name='bike_type' value={this.state.bike_type} onChange={this.handleChange}>
                         <option value='Full Suspension'>Full Suspension</option>
                         <option value='Hardtail'>Hardtail</option>
                         <option value='Road Bike'>Road Bike</option>
