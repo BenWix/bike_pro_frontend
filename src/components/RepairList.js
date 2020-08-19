@@ -9,7 +9,7 @@ const RepairList = ({repairs}) => {
             <React.Fragment>
                 <h3>Repair Log: </h3>  
                 <ul>
-                    {repairs.map(repair => <li key={repair.id}>{repair.repair_type}</li>)}    
+                    {repairs.map(repair => <li key={repair.id}>{repair.repair_type} - Miles: {repair.miles} - {repair.date}</li>)}    
                 </ul>  
             </React.Fragment>
         )
