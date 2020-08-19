@@ -16,7 +16,6 @@ const RepairList = ({repairs}) => {
                         <th>Description</th>
                     </tr>
                     {repairs.map(repair => {
-                        // <li key={repair.id}>{repair.repair_type} - Miles: {repair.miles} - {repair.date}</li>
                         return (
                             <tr>
                                 <th>{repair.repair_type}</th>
