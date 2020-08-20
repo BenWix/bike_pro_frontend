@@ -17,7 +17,8 @@ export default class About extends Component {
                     This app is work in progress and will continue to evolve
                 </p>
 
-                <p>App was designed by Ben Wichser</p>
+                <p>App was designed by <a href='https://bwichser.com'>Ben Wichser</a></p>
+                
 
             </div>
         )
