@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import Navbar from './components/Navbar'
-import Home from './containers/Home'
+import Home from './components/Home'
 import CustomersContainer from './containers/CustomersContainer'
 import CustomerContainer from './containers/CustomerContainer'
 import BikeContainer from './containers/BikeContainer';
